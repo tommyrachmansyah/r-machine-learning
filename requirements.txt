@@ -1,0 +1,11 @@
+plumber
+logger
+tictoc
+httr
+jsonlite
+caret
+lattice
+ggplot2
+e1071
+kernlab
+randomForest
