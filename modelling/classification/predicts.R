@@ -1,5 +1,5 @@
 model_selector <- function(model) {
-  method = ""
+  method <- ""
   if (model == "lda") {
     method <- tmc[1]
   } else if (model == "cart") {

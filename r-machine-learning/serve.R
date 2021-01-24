@@ -6,6 +6,7 @@ source("r-machine-learning/train_model.R")
 source("settings.R")
 
 tmc <<- train_model_classification()
+tmk <<- train_model_clustering()
 route <- "r-machine-learning/middleware.R"
 
 convert_empty <- function(string) {
@@ -29,11 +30,11 @@ run_app <- function() {
   root <- plumb(route)
   root$registerHooks(
     list(
-      preroute <- function() {
+      preroute = function() {
         tic()
       },
-      postroute <- function(req, res){
-        end <- toc(quiet = TRUE)
+      postroute = function(req, res) {
+        end <- toc(quiet=TRUE)
         log_info(paste(addr, agent, http_host, request_method, path_info, res_status, running_time, sep=" "))
       }
     )
