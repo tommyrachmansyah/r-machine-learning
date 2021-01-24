@@ -7,6 +7,7 @@ source("settings.R")
 
 tmc <<- train_model_classification()
 tmk <<- train_model_clustering()
+tmr <<- train_model_regression()
 route <- "r-machine-learning/middleware.R"
 
 convert_empty <- function(string) {
