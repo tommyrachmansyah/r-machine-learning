@@ -1,7 +1,7 @@
 library("fastDummies")
 
 get_data <- function(method) {
-  filename <- "iris.csv"
+  filename <- "data/iris.csv"
   dataset <- read.csv(filename)
   # length and width in cm
   colnames(dataset) <- c("id", "sepal_length", "sepal_width", "petal_length", "petal_width", "species")

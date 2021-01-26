@@ -1,3 +1,3 @@
-source("r-machine-learning/serve.R")
+source("R/serve.R")
 
 run_app()

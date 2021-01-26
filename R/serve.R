@@ -2,13 +2,13 @@ library("plumber")
 library("logger")
 library("tictoc")
 
-source("r-machine-learning/train_model.R")
+source("R/train_model.R")
 source("settings.R")
 
 tmc <<- train_model_classification()
 tmk <<- train_model_clustering()
 tmr <<- train_model_regression()
-route <- "r-machine-learning/middleware.R"
+route <- "R/middleware.R"
 
 convert_empty <- function(string) {
   if (string == "") {

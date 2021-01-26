@@ -15,7 +15,7 @@ method_checker <- function(method) {
   } else if (method %in% list.method.clustering) {
     return(list(message = paste(as.character(method), "is CLUSTERING method, can be used on /predict/cluster API")))
   } else if (method %in% list.method.regression) {
-    return(list(message = paste(as.character(method), "is REGRESSION method, can be used on /predict/{sepal_length || sepal_width || petal_length || petal_width} API")))
+    return(list(message = paste(as.character(method), "is REGRESSION method, can be used on /predict/{sepal_length||sepal_width||petal_length||petal_width} API")))
   } else {
     return(list(message = paste(as.character(method), "method is NOT EXIST")))
   }
