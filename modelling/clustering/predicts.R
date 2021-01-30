@@ -1,5 +1,5 @@
 model_selector <- function(model) {
-  method <- list(list(0))
+  method <- list(list(""))
   if (model == "km") {
     method <- tmk
   }
@@ -13,7 +13,7 @@ build_data_to_predict <- function(sepal_length, sepal_width, petal_length, petal
 cluster_predict <- function(model, sepal_length, sepal_width, petal_length, petal_width) {
   method <- model_selector(model)
   checker <- method[[1]][[1]]
-  if (checker == 0) {
+  if (checker == "") {
     return("")
   }
   data_to_predict <- build_data_to_predict(sepal_length, sepal_width, petal_length, petal_width)

@@ -1,5 +1,5 @@
 model_selector <- function(model, attribute) {
-  method <- ""
+  method <- list("")
   if (model == "lasso") {
     method <- tmr[[1]]
   } else if (model == "ridge") {
@@ -51,7 +51,8 @@ build_data_to_predict <- function(sepal_length=NULL, sepal_width=NULL, petal_len
 
 sepal_length_predict <- function(model, sepal_width, petal_length, petal_width, species_id) {
   method <- model_selector(model, attribute="sl")
-  if (method == "") {
+  checker <- method[[1]]
+  if (checker == "") {
     return("")
   }
   data_to_predict <- build_data_to_predict(sepal_width=sepal_width, petal_length=petal_length, petal_width=petal_width, species_id=species_id)
@@ -61,7 +62,8 @@ sepal_length_predict <- function(model, sepal_width, petal_length, petal_width, 
 
 sepal_width_predict <- function(model, sepal_length, petal_length, petal_width, species_id) {
   method <- model_selector(model, attribute="sw")
-  if (method == "") {
+  checker <- method[[1]]
+  if (checker == "") {
     return("")
   }
   data_to_predict <- build_data_to_predict(sepal_length=sepal_length, petal_length=petal_length, petal_width=petal_width, species_id=species_id)
@@ -71,7 +73,8 @@ sepal_width_predict <- function(model, sepal_length, petal_length, petal_width, 
 
 petal_length_predict <- function(model, sepal_length, sepal_width, petal_width, species_id) {
   method <- model_selector(model, attribute="pl")
-  if (method == "") {
+  checker <- method[[1]]
+  if (checker == "") {
     return("")
   }
   data_to_predict <- build_data_to_predict(sepal_length=sepal_length, sepal_width=sepal_width, petal_width=petal_width, species_id=species_id)
@@ -81,7 +84,8 @@ petal_length_predict <- function(model, sepal_length, sepal_width, petal_width, 
 
 petal_width_predict <- function(model, sepal_length, sepal_width, petal_length, species_id) {
   method <- model_selector(model, attribute="pw")
-  if (method == "") {
+  checker <- method[[1]]
+  if (checker == "") {
     return("")
   }
   data_to_predict <- build_data_to_predict(sepal_length=sepal_length, sepal_width=sepal_width, petal_length=petal_length, species_id=species_id)
