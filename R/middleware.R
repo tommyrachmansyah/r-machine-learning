@@ -41,6 +41,7 @@ predict_species <- function(method="lda", sepal_length=5.0, sepal_width=3.0, pet
   return(list(species = unlist(result)))
 }
 
+#* @serializer unboxedJSON
 #* @get /predict/cluster
 predict_cluster <- function(method="km", sepal_length=5.0, sepal_width=3.0, petal_length=1.5, petal_width=0.5) {
   source("../modelling/clustering/predicts.R")
